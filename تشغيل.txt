@@ -1,3 +1,0 @@
-cd /home/imad/Documents/vocal-remover
-source venv/bin/activate.fish
-python app.py
