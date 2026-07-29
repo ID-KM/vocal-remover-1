@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداة عزل الصوت بالذكاء الاصطناعي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>عزل الصوت بالذكاء الاصطناعي</h1>
+            <p>افصل الموسيقى عن صوت المغني من أي أغنية أو فيديو</p>
+        </header>
+
+        <main>
+            <!-- Step 1: Input Area -->
+            <section id="input-section">
+                <form id="process-form">
+                    <div id="drop-zone" class="drop-zone">
+                        <div class="drop-zone-prompt">
+                            <span class="drop-zone-icon">🎵</span>
+                            <p>اسحب وأفلت ملفًا صوتيًا أو فيديو هنا</p>
+                            <p class="small-text">أو</p>
+                            <button type="button" id="browse-btn" class="btn">اختر ملفًا</button>
+                            <input type="file" id="file-input" name="file" accept=".mp3,.mp4" hidden>
+                        </div>
+                    </div>
+                    <div class="url-input-container">
+                        <input type="text" id="url-input" name="url" class="url-input" placeholder="أو الصق رابطًا من يوتيوب هنا...">
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary" disabled>ابدأ المعالجة</button>
+                </form>
+            </section>
+
+            <!-- Step 2: Processing Area -->
+            <section id="processing-section" class="hidden">
+                <h2 id="progress-title">جاري المعالجة...</h2>
+                <div class="progress-bar">
+                    <div id="progress-bar-inner" class="progress-bar-inner"></div>
+                </div>
+                <p id="progress-text">تهيئة...</p>
+            </section>
+
+            <!-- Step 3: Results Area -->
+            <section id="results-section" class="hidden">
+                <h2>اكتملت المعالجة بنجاح!</h2>
+                <p>استمع إلى النتائج وقارنها، ثم قم بتنزيل ما تريد.</p>
+                <div id="results-players">
+                    <div class="audio-player">
+                        <p><strong>المقطع الأصلي</strong></p>
+                        <audio id="original-audio" controls></audio>
+                    </div>
+                    <div class="audio-player">
+                        <p><strong>الصوت المعزول (النتيجة)</strong></p>
+                        <audio id="vocals-audio" controls></audio>
+                    </div>
+                </div>
+                <div id="download-options">
+                    <h3>خيارات التحميل</h3>
+                    <!-- Download buttons will be inserted here -->
+                </div>
+                <button id="reset-btn" class="btn">البدء من جديد</button>
+            </section>
+
+            <!-- Error Display -->
+            <section id="error-section" class="hidden">
+                <h3>حدث خطأ</h3>
+                <p id="error-message"></p>
+                <button id="error-reset-btn" class="btn">حاول مرة أخرى</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
