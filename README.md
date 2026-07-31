@@ -1,5 +1,5 @@
 
-# 🎤 Vocal Remover 1 — AI Vocal Isolation
+# 🎵 Music Remover 1 — AI Vocal Isolation
 
 > **عزل الصوت من الفيديوهات والمقاطع الصوتية بالذكاء الاصطناعي**
 
@@ -18,8 +18,8 @@ A web application that separates vocals from music using Demucs (Hybrid Transfor
 
 ```bash
 # Clone
-git clone https://github.com/ID-KM/vocal-remover-1.git
-cd vocal-remover-1
+git clone https://github.com/ID-KM/music-remover-1.git
+cd music-remover-1
 
 # Setup
 python3 -m venv venv
